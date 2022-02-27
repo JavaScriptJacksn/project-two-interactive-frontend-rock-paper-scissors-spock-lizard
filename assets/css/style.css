@@ -1,4 +1,92 @@
+/*Google Fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+/*General page styling*/
+
 body {
     margin: 0;
     padding: 0;
+    margin-top: 25px;
+    font-family: Orbiton, sans-serif;
+    font-weight: 400px;
+    text-transform: uppercase;
+}
+
+h1, h2{
+    text-align: center;
+    color: #3a3a3a;
+    font-family: Orbitron, sans-serif;
+    line-height: 2.5em;
+}
+
+h1 {
+    border-bottom: 2px solid #3a3a3a;
+}
+
+/*Container styling*/
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.game-area {
+    width: 100%;
+    height: fit-content;
+    margin: 0, auto;
+    margin-top: 10vh;
+}
+
+/*Player area styling*/
+
+.player-area {
+    box-sizing: border-box;
+    width: 50%;
+    height: 30vh;
+    position: relative;
+    display: inline;
+    display: flex;
+}
+
+.player1-area {
+    float: left;
+    justify-content: center;
+    align-items: center;
+}
+
+.player2-area {
+    float: right;
+    justify-content: center;
+    align-items: center;
+}
+
+#player1-name {
+    color: red;
+    margin-right: 20%;
+}
+
+#player2-name {
+    color: blue;
+    margin-left: 20%;
+}
+
+#player1-name, #player2-name {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/*Rules area styling*/
+
+.rules-area {
+    width: 100%;
+    margin: 0, auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rules-button {
+    margin: 50px;
 }

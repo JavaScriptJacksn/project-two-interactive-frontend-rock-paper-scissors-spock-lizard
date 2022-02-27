@@ -4,25 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spock's Revenge'</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Spock's Revenge</title>
 </head>
 <body>
     <header>
         <h1 id="page-header">Spock's Revenge</h1>
-        <h2>(A Rock, Paper, Scissors, Spock, Lizard Game!)</h2>
+        <h2>( A Rock, Paper, Scissors, Spock, Lizard Game! )</h2>
     </header>
 
+
+    <!--Outer container for game-area and rules-area-->
     <div class="container">
-
+        <!--Game area-->
         <div class="game-area">
-            <div class="player1-area"></div>
-            <div class="player2-area"></div>
-        </div>
 
+            <div class="player1-area player-area">
+                <h3 id="player1-name">Player 1</h3>
+                <button id="player1-move">Change Move</button>
+            </div>
+
+            <div class="player2-area player-area">
+                <button id="player2-move">Change Move</button>
+                <h3 id="player2-name">Player 2</h3>
+            </div>
+
+        </div>
+        <!--Rules area-->
         <div class="rules-area">
-            <button id="player-versus-player" class="active"></button>
-            <button id="rules"></button>
-            <button id="player-versus-computer"></button>
+            <button id="player-versus-player" class="activ rules-button">Player VS Player</button>
+            <button id="rules" class = "rules-button">Rules</button>
+            <button id="player-versus-computer" class = "rules-button">Player VS Computer</button>
         </div>
 
     </div>
