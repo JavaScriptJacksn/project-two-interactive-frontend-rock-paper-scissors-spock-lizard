@@ -4,13 +4,18 @@
 
 /*General page styling*/
 
+html {
+    overflow-y: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
     margin-top: 25px;
-    font-family: Orbiton, sans-serif;
+    font-family: Orbitron, sans-serif;
     font-weight: 400px;
     text-transform: uppercase;
+    height: 100vh;
 }
 
 h1, h2{
@@ -20,22 +25,29 @@ h1, h2{
     line-height: 2.5em;
 }
 
-h1 {
+h2 {
+    font-size: 1rem;
+}
+
+header, .rules-area {
+    height: 10vh;
+}
+
+header{
     border-bottom: 2px solid #3a3a3a;
 }
 
 /*Container styling*/
 
 .container {
-    width: 100%;
-    height: 100vh;
+    position: relative;
 }
 
 .game-area {
     width: 100%;
-    height: fit-content;
-    margin: 0, auto;
-    margin-top: 10vh;
+    height: 80vh;
+    position: relative;
+    background: #FFFFFF url("../images/vs-image.jpg") no-repeat center center;
 }
 
 /*Player area styling*/
@@ -45,30 +57,28 @@ h1 {
     width: 50%;
     height: 30vh;
     position: relative;
-    display: inline;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 25vh;
 }
 
 .player1-area {
     float: left;
-    justify-content: center;
-    align-items: center;
 }
 
 .player2-area {
     float: right;
-    justify-content: center;
-    align-items: center;
 }
 
 #player1-name {
     color: red;
-    margin-right: 20%;
+    margin-right: 15%;
 }
 
 #player2-name {
-    color: blue;
-    margin-left: 20%;
+    color: #0077CA;
+    margin-left: 15%;
 }
 
 #player1-name, #player2-name {
@@ -81,12 +91,32 @@ h1 {
 
 .rules-area {
     width: 100%;
-    margin: 0, auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 2px solid #3a3a3a;
+    border-bottom: 2px solid #3a3a3a;
+    bottom: 0;
+    position: fixed;
 }
 
 .rules-button {
     margin: 50px;
+}
+
+button {
+    width: fit-content;
+    border: 2px solid #3a3a3a;
+    font-size: 1.2rem;
+    font-family: Orbitron, sans-serif;
+    color: #3a3a3a;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/*Move icon styling*/
+
+.move-image {
+    width: 100px;
+    margin: 25px;
 }

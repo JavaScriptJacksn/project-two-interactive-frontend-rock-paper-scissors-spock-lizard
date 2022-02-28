@@ -8,25 +8,29 @@
     <title>Spock's Revenge</title>
 </head>
 <body>
+    <!--Header-->
     <header>
         <h1 id="page-header">Spock's Revenge</h1>
         <h2>( A Rock, Paper, Scissors, Spock, Lizard Game! )</h2>
     </header>
-
-
     <!--Outer container for game-area and rules-area-->
     <div class="container">
         <!--Game area-->
         <div class="game-area">
-
+            <div class="score-area">
+                <p id="player1-score"></p>
+                <p id="player2-score"></p>
+            </div>
             <div class="player1-area player-area">
-                <h3 id="player1-name">Player 1</h3>
+                <h3 id="player1-name">Player 1 : <span id="player1-score">0</span></h3>
                 <button id="player1-move">Change Move</button>
+                <img src="assets/images/scissors.jpg" class="move-image">
             </div>
 
             <div class="player2-area player-area">
+                <img src="assets/images/spock.jpg" class="move-image">
                 <button id="player2-move">Change Move</button>
-                <h3 id="player2-name">Player 2</h3>
+                <h3 id="player2-name"><span id="player2-score">0</span> : Player 2</h3>
             </div>
 
         </div>
