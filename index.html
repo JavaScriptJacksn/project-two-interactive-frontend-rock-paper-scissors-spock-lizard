@@ -25,13 +25,13 @@
             </div>
             <div class="player1-area player-area">
                 <h3 id="player1-name">Player 1 : <span id="player1-score">0</span></h3>
-                <button id="player1-move">Change Move</button>
+                <button id="player1-move" onclick="player1ChangeMove()">Change Move</button>
                 <img src="assets/images/scissors.jpg" class="move-image">
             </div>
 
             <div class="player2-area player-area">
                 <img src="assets/images/spock.jpg" class="move-image">
-                <button id="player2-move">Change Move</button>
+                <button id="player2-move" onclick="player2ChangeMove()">Change Move</button>
                 <h3 id="player2-name"><span id="player2-score">0</span> : Player 2</h3>
             </div>
 
@@ -48,9 +48,65 @@
         </div>
     </div>
 
-    
+    <!--Player 1 move change modal-->
 
-    <div class="rules-popup" id="rules">
+    <div class="popup move-box" id="player1-move-box">
+        <div class="popup-header"><h1>Select Move</h1><button class="close-button" onclick="player1MoveClose()">X</button></div>
+        <div class="move-container">
+        <figure>
+            <img src="assets/images/rock.png" class="move-image">
+            <figcaption>Rock</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/paper.png" class="move-image">
+            <figcaption>Paper</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/scissors.jpg" class="move-image">
+            <figcaption>Scissors</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/spock.jpg" class="move-image">
+            <figcaption>Spock</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/lizard.png" class="move-image">
+            <figcaption>Lizard</figcaption>
+        </figure>
+    </div>
+    </div>
+
+    <!--Player 2 move change modal-->
+
+    <div class="popup move-box" id="player2-move-box">
+        <div class="popup-header"><h1>Select Move</h1><button class="close-button" onclick="player2MoveClose()">X</button></div>
+        <div class="move-container">
+        <figure>
+            <img src="assets/images/rock.png" class="move-image">
+            <figcaption>Rock</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/paper.png" class="move-image">
+            <figcaption>Paper</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/scissors.jpg" class="move-image">
+            <figcaption>Scissors</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/spock.jpg" class="move-image">
+            <figcaption>Spock</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/lizard.png" class="move-image">
+            <figcaption>Lizard</figcaption>
+        </figure>
+    </div>
+    </div>
+
+    <!--Rules modal-->
+
+    <div class="popup" id="rules">
         <div class="popup-header"><h1>Rules</h1><button class="close-button" onclick="rulesClose()">X</button></div>
         <p>The rules of this game is simple, each move you can chose defeats two other moves. 
             If the move you pick defeats the opponent's, you win! ...and of course, vice versa.
