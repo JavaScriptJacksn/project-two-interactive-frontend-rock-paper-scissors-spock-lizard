@@ -140,6 +140,7 @@ button {
     border-radius: 15px;
     padding: 10px 15px;
     z-index: 100;
+    transition: 200ms ease-in-out;
 }
 
 .popup-header{
@@ -182,6 +183,7 @@ button {
 
 .move-box {
     width: fit-content;
+    transition: 200ms ease-in-out;
 }
 
 figure {
