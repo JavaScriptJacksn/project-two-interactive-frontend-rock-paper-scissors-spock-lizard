@@ -26,7 +26,7 @@ h1, h2{
     text-align: center;
     color: #3a3a3a;
     font-family: Orbitron, sans-serif;
-    line-height: 2.5em;
+    line-height: 2em;
 }
 
 h2 {
@@ -52,6 +52,7 @@ header{
     width: 100%;
     height: 80vh;
     position: relative;
+    overflow: hidden;
     background: #FFFFFF url("../images/vs-image.jpg") no-repeat center center;
 }
 
