@@ -13,8 +13,10 @@
         <h1 id="page-header">Spock's Revenge</h1>
         <h2>( A Rock, Paper, Scissors, Spock, Lizard Game! )</h2>
     </header>
+
     <!--Outer container for game-area and rules-area-->
     <div class="container">
+
         <!--Game area-->
         <div class="game-area">
             <div class="score-area">
@@ -34,15 +36,41 @@
             </div>
 
         </div>
+
         <!--Rules area-->
         <div class="rules-area">
-            <button id="player-versus-player" class="activ rules-button">Player VS Player</button>
-            <button id="rules" class = "rules-button">Rules</button>
-            <button id="player-versus-computer" class = "rules-button">Player VS Computer</button>
-        </div>
 
+            <button>Player VS Player</button>
+
+            <button id="rules-button" onclick="popUp()">Rules</button>
+    
+            <button>Player VS Computer</button>
+        </div>
     </div>
 
+    
+
+    <div class="rules-popup" id="rules">
+        <div class="popup-header"><h1>Rules</h1><button class="close-button" onclick="rulesClose()">X</button></div>
+        <p>The rules of this game is simple, each move you can chose defeats two other moves. 
+            If the move you pick defeats the opponent's, you win! ...and of course, vice versa.
+            List of rules:
+            <ul>
+                <li>Scissors cuts paper.</li>
+                <li>Paper covers rock.
+                <li>Rock crushes lizard.</li>
+                <li>Lizard poisons Spock.</li>
+                <li>Spock smashes scissors.</li>
+                <li>Scissors decapitate lizards.</li>
+                <li> Lizard eats paper.</li>
+                <li> Paper disproves Spock.</li>
+                <li> Spock vaporizes rock.</li>
+                <li> Rock crushes scissors.</li>
+            </ul>
+        </p>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

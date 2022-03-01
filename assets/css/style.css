@@ -4,6 +4,10 @@
 
 /*General page styling*/
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     overflow-y: hidden;
 }
@@ -35,6 +39,7 @@ header, .rules-area {
 
 header{
     border-bottom: 2px solid #3a3a3a;
+    margin-bottom: 5px;
 }
 
 /*Container styling*/
@@ -100,7 +105,7 @@ header{
     position: fixed;
 }
 
-.rules-button {
+#rules-button {
     margin: 50px;
 }
 
@@ -119,4 +124,57 @@ button {
 .move-image {
     width: 100px;
     margin: 25px;
+}
+
+/*Rules popup styling*/
+
+.rules-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 25%;
+    background-color: white;
+    border: 2px solid #3a3a3a;
+    border-radius: 15px;
+    padding: 10px 15px;
+    z-index: 100;
+}
+
+.popup-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    border-bottom: 2px solid #3a3a3a;
+}
+
+/*overlay/hiding modals styling*/
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.overlay-active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.popup-active {
+    transform: translate(-50%, -50%) scale(1);
 }
