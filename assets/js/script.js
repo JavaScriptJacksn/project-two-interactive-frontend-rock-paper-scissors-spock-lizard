@@ -58,8 +58,8 @@ function changeMove(){
     let currentMoveId = parentId.slice(0, 12)
     console.log(currentMoveId)
     currentMove = document.getElementById(currentMoveId)
-    console.log(currentMove.outerHTML)
-    currentMove.outerHTML = newMoveHtml
+    console.log(currentMove.innerHTML)
+    currentMove.innerHTML = newMoveHtml
     /* It then adds the missing id of playerX-move to the image again*/
 }
 
