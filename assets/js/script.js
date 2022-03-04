@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function (){
     
     for (let image of moveImages){
         image.addEventListener("click", changeMove)
+        image.addEventListener("click", alertPlayerChoice)
     }
     });
 
@@ -35,7 +36,6 @@ function changeMove(){
     let parentId = this.parentNode.parentNode.id;
     let currentPlayer
     let currentMove
-  
     /**If this is still not optimised when I hand in the project,
     * I apoligse for the hard to follow function
     * Essentially, it gets the id of the current image move from slicing the parentID string
@@ -52,6 +52,12 @@ function changeMove(){
     currentMove.innerHTML = newMoveHtml
 }
 
+function alertPlayerChoice (){
+    let moveName = this.children[1].textContent
+    console.log(moveName);
+    alert(`You have chosen ${moveName}`);
+}
+
 function runGame(){
 
 }
@@ -64,6 +70,16 @@ function incrementScore(){
 
 }
 
-function changeGameMode(){
+function changeGameMode(choice){
+    if (choice === "pvp"){
+        document.getElementById("game-mode").textContent = "pvp";
+    } else if (choice === "pvc"){
+        document.getElementById("game-mode").textContent = "pvc";
+    } else {
+        throw alert ("Invalid game mode")
+    }
+}
+
+function promptPlayerInput(){
 
 }

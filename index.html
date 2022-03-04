@@ -16,7 +16,7 @@
 
     <!--Outer container for game-area and rules-area-->
     <div class="container">
-        <p>Game mode selected: <span id="game-mode">PVP</span></p>
+        <p>Game mode selected: <span id="game-mode">pvp</span></p>
         <!--Game area-->
         <div class="game-area">
             <div class="score-area">
@@ -27,13 +27,13 @@
                 <h3 id="player1-name">Player 1 : <span id="player1-score">0</span></h3>
                 <!--Player 1 move box button-->
                 <button onclick="popUp('player1-move-box')">Change Move</button>
-                <span id="player1-move">
+                <span id="player1-move" class="hide-element">
                 <img src="assets/images/scissors.jpg" class="move-image">
             </span>
             </div>
 
             <div class="player2-area player-area">
-                <span id="player2-move">
+                <span id="player2-move" class="hide-element">
                 <img src="assets/images/spock.jpg" class="move-image">
             </span>
                 <!--Player 2 move box button-->
@@ -48,11 +48,11 @@
         <!--Rules area-->
         <div class="rules-area">
 
-            <button>Player VS Player</button>
+            <button onclick="changeGameMode('pvp')">Player VS Player</button>
 
             <button id="rules-button" onclick='popUp("rules")'>Rules</button>
     
-            <button>Player VS Computer</button>
+            <button onclick="changeGameMode('pvc')">Player VS Computer</button>
         </div>
     </div>
 
