@@ -57,18 +57,6 @@ function alertPlayerChoice (){
     alert(`You have chosen ${moveName}`);
 }
 
-function runGame(){
-
-}
-
-function checkResult(){
-
-}
-
-function incrementScore(){
-
-}
-
 function changeGameMode(choice){
     if (choice === "pvp"){
         document.getElementById("game-mode").textContent = "pvp";
@@ -82,4 +70,32 @@ function changeGameMode(choice){
     /*This function also resets the scores to 0, as users will expect to play with a clean slate against a new oponent*/
     document.getElementById("player1-score").textContent = "0"
     document.getElementById("player2-score").textContent = "0"
+}
+
+function runGame(){
+    console.log("game started")
+    let gameMode = document.getElementById("game-mode").textContent
+    if (gameMode === ""){
+        alert ("Please select a game mode");
+    } else {
+        console.log(`${gameMode} game running`)
+    }
+    if (gameMode === "pvc"){
+        computerMove();
+        checkResult();
+    } else {
+        checkResult();
+    }
+}
+
+function checkResult(){
+    console.log("checking result")
+}
+
+function incrementScore(){
+    console.log("incremented score")
+}
+
+function computerMove(){
+    console.log("generating computer move")
 }
