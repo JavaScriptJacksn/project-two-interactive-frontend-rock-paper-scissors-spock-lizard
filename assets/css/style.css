@@ -56,6 +56,29 @@ header{
     background: #FFFFFF url("../images/vs-image.jpg") no-repeat center center;
 }
 
+/*Run game button and game mode text styling*/
+
+#run-game-button {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+}
+
+.container > p {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    color: #3a3a3a;
+}
+
+#game-mode {
+    color: purple;
+}
+
 /*Player area styling*/
 
 .player-area {
@@ -188,6 +211,7 @@ button {
 
 figure {
     width: fit-content;
+    cursor: pointer;
 }
 
 figcaption {
@@ -196,4 +220,8 @@ figcaption {
 
 .move-container {
     display: flex;
+}
+
+.hide-element {
+    transform: scale(0);
 }

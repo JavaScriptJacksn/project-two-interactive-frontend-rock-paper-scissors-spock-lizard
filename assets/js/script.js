@@ -35,23 +35,13 @@ function changeMove(){
     let parentId = this.parentNode.parentNode.id;
     let currentPlayer
     let currentMove
-    /*Checks which player is changing moves*/
-    if (parentId === "player1-move-box"){
-        console.log("player 1 is changing move")
-        currentPlayer = "1"
-    } else if (parentId === "player2-move-box"){
-        console.log("player 2 is changing move")
-        currentPlayer = "2"
-    } else {
-        /*Error mesage, you know, just in case*/
-        throw alert("error")
-    }
+  
     /**If this is still not optimised when I hand in the project,
     * I apoligse for the hard to follow function
     * Essentially, it gets the id of the current image move from slicing the parentID string
     * Then gets the element with that ID and its outer HTML
     * Then swaps it for the outer HTML of the image just selected
-    * It then adds the missing id of playerX-move to the image again
+    * This allows for the image to be read from the DOM again
     */
     let newMoveHtml = this.children[0].outerHTML
     console.log(newMoveHtml)
@@ -60,7 +50,6 @@ function changeMove(){
     currentMove = document.getElementById(currentMoveId)
     console.log(currentMove.innerHTML)
     currentMove.innerHTML = newMoveHtml
-    /* It then adds the missing id of playerX-move to the image again*/
 }
 
 function runGame(){
@@ -72,5 +61,9 @@ function checkResult(){
 }
 
 function incrementScore(){
+
+}
+
+function changeGameMode(){
 
 }
