@@ -1,3 +1,13 @@
+/*Inital function to set up event listeners*/
+document.addEventListener("DOMContentLoaded", function (){
+    let moveImages = document.getElementsByTagName("figure");
+    
+    for (let image of moveImages){
+        image.addEventListener("click", changeMove)
+        image.addEventListener("click", alertPlayerChoice)
+    }
+    });
+
 /*Functions for opening and closing the rules modal box*/
 
 function popUp (modal){
@@ -18,16 +28,6 @@ function popupClose(modal){
     overlay.classList.remove("overlay-active");
 }
 
-/*Inital function to set up event listeners*/
-document.addEventListener("DOMContentLoaded", function (){
-    let moveImages = document.getElementsByTagName("figure");
-    
-    for (let image of moveImages){
-        image.addEventListener("click", changeMove)
-        image.addEventListener("click", alertPlayerChoice)
-    }
-    });
-
 /*Change move function*/
 
 function changeMove(){
@@ -35,7 +35,8 @@ function changeMove(){
     let parentId = this.parentNode.parentNode.id;
     let currentPlayer
     let currentMove
-    /**If this is still not optimised when I hand in the project,
+    /**
+     * If this is still not optimised when I hand in the project,
     * I apoligse for the hard to follow function
     * Essentially, it gets the id of the current image move from slicing the parentID string
     * Then gets the element with that ID and its outer HTML
@@ -72,6 +73,12 @@ function changeGameMode(choice){
     document.getElementById("player2-score").textContent = "0"
 }
 
+/**
+ * The functions below run the game, score checking, 
+ * computer move generation (if needed) and 
+ * score incrementation
+ */
+
 function runGame(){
     console.log("game started")
     let gameMode = document.getElementById("game-mode").textContent
@@ -88,14 +95,15 @@ function runGame(){
     }
 }
 
+function computerMove(){
+    console.log("generating computer move")
+}
+
 function checkResult(){
     console.log("checking result")
+    /*Display images of moves and delcare winner*/
 }
 
 function incrementScore(){
     console.log("incremented score")
-}
-
-function computerMove(){
-    console.log("generating computer move")
 }
