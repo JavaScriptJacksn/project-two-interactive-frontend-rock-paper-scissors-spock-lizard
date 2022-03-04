@@ -101,7 +101,11 @@ function computerMove(){
 
 function checkResult(){
     console.log("checking result")
-    /*Display images of moves and delcare winner*/
+    /**
+     * Display images of moves and delcare winner
+     * Potentially create the rules in the runGame function rather than globally
+     * Pass it as the argument for this checkResult function
+     * */
 }
 
 function incrementScore(){
