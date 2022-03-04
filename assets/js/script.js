@@ -1,6 +1,5 @@
 /*Functions for opening and closing the rules modal box*/
 
-
 function popUp (modal){
     console.log("popUp called");
     console.log(modal);
@@ -73,13 +72,14 @@ function incrementScore(){
 function changeGameMode(choice){
     if (choice === "pvp"){
         document.getElementById("game-mode").textContent = "pvp";
+        popUp("rules")
     } else if (choice === "pvc"){
         document.getElementById("game-mode").textContent = "pvc";
+        popUp("rules")
     } else {
-        throw alert ("Invalid game mode")
+        throw alert ("Please select a game mode");
     }
-}
-
-function promptPlayerInput(){
-
+    /*This function also resets the scores to 0, as users will expect to play with a clean slate against a new oponent*/
+    document.getElementById("player1-score").textContent = "0"
+    document.getElementById("player2-score").textContent = "0"
 }

@@ -16,12 +16,10 @@
 
     <!--Outer container for game-area and rules-area-->
     <div class="container">
-        <p>Game mode selected: <span id="game-mode">pvp</span></p>
+        <p>Game mode selected: <span id="game-mode"></span></p>
         <!--Game area-->
         <div class="game-area">
             <div class="score-area">
-                <p id="player1-score"></p>
-                <p id="player2-score"></p>
             </div>
             <div class="player1-area player-area">
                 <h3 id="player1-name">Player 1 : <span id="player1-score">0</span></h3>
@@ -132,8 +130,12 @@
                 <li> Rock crushes scissors.</li>
             </ul>
         </p>
-    </div>
-
+        <section class="pvp-rules">
+        <p>Player vs player game mode:</p>
+        <p>This game works a little on the trust of the users, so, if you are playing Player versus Player, in the name of sportsmanship,
+             make sure to look away from the screen when the other player is chosing their move, thats cheating!</p>
+            </section>
+        </div>
     <div id="overlay" class="overlay"></div>
     <script src="assets/js/script.js"></script>
 </body>

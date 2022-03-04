@@ -150,7 +150,7 @@ button {
     margin: 25px;
 }
 
-/*Rules popup styling*/
+/*Popup styling*/
 
 .popup {
     position: fixed;
@@ -172,6 +172,10 @@ button {
     align-items: center;
     height: fit-content;
     border-bottom: 2px solid #3a3a3a;
+}
+
+.pvp-rules {
+    color: purple;
 }
 
 /*overlay/hiding modals styling*/
