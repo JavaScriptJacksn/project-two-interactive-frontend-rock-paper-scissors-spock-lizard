@@ -95,8 +95,22 @@ function runGame(){
     }
 }
 
+/**
+ * Generates the computer move when called
+ * This function generates a random move number
+ * Then reads the children figure elements of the moves-container div 
+ * Then writes that back to the DOM similarly to the manual selection in PVP
+*/
+
 function computerMove(){
-    console.log("generating computer move")
+    console.log("generating computer move");
+    let currentMove = document.getElementById("player2-move").children[0];
+    let newMoveHtml = document.getElementById("moves-container").children
+    let moveNum = Math.floor(Math.random()*5);
+    console.log(moveNum)
+    currentMove = newMoveHtml[moveNum].children[0].outerHTML;
+    console.log(`Computer selects move number ${moveNum} which is ${currentMove}`)
+
 }
 
 function checkResult(){
