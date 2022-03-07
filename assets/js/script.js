@@ -80,19 +80,21 @@ function changeGameMode(choice){
  */
 
 function runGame(){
-    console.log("game started")
-    let gameMode = document.getElementById("game-mode").textContent
+    console.log("game started");
+    let gameMode = document.getElementById("game-mode").textContent;
     if (gameMode === ""){
         alert ("Please select a game mode");
+        return
     } else {
-        console.log(`${gameMode} game running`)
+        console.log(`${gameMode} game running`);
     }
     if (gameMode === "pvc"){
         computerMove();
-        checkResult();
+        incrementScore(checkResult());
     } else {
-        checkResult();
+        incrementScore(checkResult());
     }
+    popUp("end-game");
 }
 
 /**
@@ -108,32 +110,87 @@ function computerMove(){
     let newMoveHtml = document.getElementById("moves-container").children
     let moveNum = Math.floor(Math.random()*5);
     console.log(moveNum)
-    currentMove = newMoveHtml[moveNum].children[0].outerHTML;
+    currentMove.outerHTML = newMoveHtml[moveNum].children[0].outerHTML;
     console.log(`Computer selects move number ${moveNum} which is ${currentMove}`)
 
 }
 
-function checkResult(){
-    console.log("checking result")
-    let answers = {
-        'Scissors'  :   ['Paper', 'Scissors cuts paper!'],
-        'Paper'     :   ['Rock', 'Paper covers rock!'],
-        'Rock'      :   ['Lizard', 'Rock crushes lizard!'],
-        'Lizard'    :   ['Spock', 'Lizard poisons Spock!'],
-        'Spock'     :   ['Scissors', 'Spock smashes scissors!'],
-        'Scissors'  :   ['Lizard', 'Scissors decapitate lizards!'],
-        'Lizard'    :   ['Paper', 'Lizard eats paper!'],
-        'Paper'     :   ['Spock', 'Paper disproves Spock!'],
-        'Spock'     :   ['Rock', 'Spock vaporizes rock!'],
-        'Rock'      :   ['Scissors', 'Rock crushes scissors!'],
-    }
-    /**
+/**
      * Display images of moves and delcare winner
      * Potentially create the rules in the runGame function rather than globally
      * Pass it as the argument for this checkResult function
      * */
+
+function checkResult(){
+    console.log("checking result")
+    let answers = [
+        ['scissors',    'paper',    'Scissors cuts paper!'],
+        ['paper',       'rock',     'Paper covers rock!'],
+        ['rock' ,       'lizard',   'Rock crushes lizard!'],
+        ['lizard' ,     'spock',    'Lizard poisons Spock!'],
+        ['spock' ,      'scissors', 'Spock smashes scissors!'],
+        ['scissors' ,   'lizard',   'Scissors decapitate lizard!'],
+        ['lizard' ,     'paper',    'Lizard eats paper!'],
+        ['paper' ,      'spock',    'Paper disproves Spock!'],
+        ['spock' ,      'rock',     'Spock vaporizes rock!'],
+        ['rock'  ,      'scissors', 'Rock crushes scissors!']
+    ];
+    document.getElementById("player1-move").classList.remove("hide-element");
+    document.getElementById("player2-move").classList.remove("hide-element");
+
+    let p1Move = document.getElementById("player1-move").children[0].getAttribute("data-type");
+    let p2Move = document.getElementById("player2-move").children[0].getAttribute("data-type");
+    console.log(p1Move);
+    console.log(p2Move);
+    let victoryMessage
+    let winner
+    for (let i = 0; i < answers.length; i++) {
+        console.log(answers[i]);
+        if ((answers[i][0] === p1Move) && (answers[i][1] === p2Move)){
+            winner = "player1"
+            victoryMessage = answers[i][2]
+            break;
+        } else if ((answers[i][0] === p2Move) && (answers[i][1] === p1Move)){
+            winner = "player2"
+            victoryMessage = answers[i][2]
+            break;
+        } else {
+            continue;
+        }
+    }
+
+    let secondaryMessage = `${winner} wins`
+
+    if (winner === undefined){
+        victoryMessage = "It's a draw!";
+        secondaryMessage ="No winners!";
+    };
+    console.log(secondaryMessage);
+    console.log(victoryMessage);
+
+    /*Writes the messages of the winner to the end-game modal*/
+    
+    document.getElementById("victory-message").innerText = victoryMessage;
+    document.getElementById("secondary-message").innerText = secondaryMessage;
+
+    return winner;
 }
 
-function incrementScore(){
+/*Increments the score for either player depending on victor, and also reseting the game*/
+
+function incrementScore(winner){
     console.log("incremented score")
+    let player1Score = parseInt(document.getElementById("player1-score").textContent);
+    let player2Score = parseInt(document.getElementById("player2-score").textContent);
+    if (winner === "player1"){
+        player1Score++
+        console.log(`player1 score is ${player1Score}`);
+        document.getElementById("player1-score").textContent = player1Score
+    }else if (winner === "player2"){
+        player2Score++
+        console.log(`player2 score is ${player2Score}`);
+        document.getElementById("player2-score").textContent = player2Score
+    }
+    document.getElementById("player1-move").classList.add("hide-element");
+    document.getElementById("player2-move").classList.add("hide-element");
 }

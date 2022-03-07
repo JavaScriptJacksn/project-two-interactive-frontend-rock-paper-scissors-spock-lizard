@@ -94,10 +94,12 @@ header{
 
 .player1-area {
     float: left;
+    padding-right: 10%;
 }
 
 .player2-area {
     float: right;
+    padding-left: 10%;
 }
 
 #player1-name {

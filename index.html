@@ -26,13 +26,13 @@
                 <!--Player 1 move box button-->
                 <button onclick="popUp('player1-move-box')">Change Move</button>
                 <span id="player1-move" class="hide-element">
-                <img src="assets/images/scissors.jpg" class="move-image">
+                <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors">
             </span>
             </div>
 
             <div class="player2-area player-area">
                 <span id="player2-move" class="hide-element">
-                <img src="assets/images/spock.jpg" class="move-image">
+                <img src="assets/images/spock.jpg" class="move-image" data-type="spock">
             </span>
                 <!--Player 2 move box button-->
                 <button onclick='popUp("player2-move-box")'>Change Move</button>
@@ -60,23 +60,23 @@
         <div class="popup-header"><h1>Select Move</h1><button class="close-button" onclick="popupClose('player1-move-box')">X</button></div>
         <div class="move-container" id="moves-container">
         <figure>
-            <img src="assets/images/rock.png" class="move-image">
+            <img src="assets/images/rock.png" class="move-image" data-type="rock">
             <figcaption>Rock</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/paper.png" class="move-image">
+            <img src="assets/images/paper.png" class="move-image" data-type="paper">
             <figcaption>Paper</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/scissors.jpg" class="move-image">
+            <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors">
             <figcaption>Scissors</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/spock.jpg" class="move-image">
+            <img src="assets/images/spock.jpg" class="move-image" data-type="spock">
             <figcaption>Spock</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/lizard.png" class="move-image">
+            <img src="assets/images/lizard.png" class="move-image" data-type="lizard">
             <figcaption>Lizard</figcaption>
         </figure>
     </div>
@@ -88,23 +88,23 @@
         <div class="popup-header"><h1>Select Move</h1><button class="close-button" onclick="popupClose('player2-move-box')">X</button></div>
         <div class="move-container">
         <figure>
-            <img src="assets/images/rock.png" class="move-image">
+            <img src="assets/images/rock.png" class="move-image" data-type="rock">
             <figcaption>Rock</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/paper.png" class="move-image">
+            <img src="assets/images/paper.png" class="move-image" data-type="paper">
             <figcaption>Paper</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/scissors.jpg" class="move-image">
+            <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors">
             <figcaption>Scissors</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/spock.jpg" class="move-image">
+            <img src="assets/images/spock.jpg" class="move-image" data-type="spock">
             <figcaption>Spock</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/lizard.png" class="move-image">
+            <img src="assets/images/lizard.png" class="move-image" data-type="lizard">
             <figcaption>Lizard</figcaption>
         </figure>
     </div>
@@ -136,7 +136,18 @@
              make sure to look away from the screen when the other player is chosing their move, thats cheating!</p>
             </section>
         </div>
+
+    <!--End game modal-->
+
+    <div class="popup" id="end-game">
+        <div class="popup-header"><h1 id="victory-message">Winner Winner Chicken dinner!</h1><button class="close-button" onclick="popupClose('end-game')">X</button></div>
+        <p id="secondary-message"></p>
+    </div>
+
+    <!--Modal background overlay-->
+
     <div id="overlay" class="overlay"></div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
