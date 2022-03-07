@@ -94,7 +94,19 @@ function runGame(){
     } else {
         incrementScore(checkResult());
     }
-    popUp("end-game");
+    document.getElementById("player1-move").classList.remove("hide-element");
+    document.getElementById("player2-move").classList.remove("hide-element");
+
+    /*Allows time for players to react themselves to the moves shown before the message is displayed*/
+
+    setTimeout(popUp, 1000, "end-game");
+    setTimeout(newGame, 1000);
+}
+
+function newGame(){
+    console.log("new game starting")
+    document.getElementById("player1-move").classList.add("hide-element");
+    document.getElementById("player2-move").classList.add("hide-element");
 }
 
 /**
@@ -135,8 +147,6 @@ function checkResult(){
         ['spock' ,      'rock',     'Spock vaporizes rock!'],
         ['rock'  ,      'scissors', 'Rock crushes scissors!']
     ];
-    document.getElementById("player1-move").classList.remove("hide-element");
-    document.getElementById("player2-move").classList.remove("hide-element");
 
     let p1Move = document.getElementById("player1-move").children[0].getAttribute("data-type");
     let p2Move = document.getElementById("player2-move").children[0].getAttribute("data-type");
@@ -173,6 +183,9 @@ function checkResult(){
     document.getElementById("victory-message").innerText = victoryMessage;
     document.getElementById("secondary-message").innerText = secondaryMessage;
 
+    document.getElementById("player1-move").classList.remove("hide-element");
+    document.getElementById("player2-move").classList.remove("hide-element");
+    
     return winner;
 }
 
@@ -191,6 +204,4 @@ function incrementScore(winner){
         console.log(`player2 score is ${player2Score}`);
         document.getElementById("player2-score").textContent = player2Score
     }
-    document.getElementById("player1-move").classList.add("hide-element");
-    document.getElementById("player2-move").classList.add("hide-element");
 }
