@@ -115,6 +115,18 @@ function computerMove(){
 
 function checkResult(){
     console.log("checking result")
+    let answers = {
+        'Scissors'  :   ['Paper', 'Scissors cuts paper!'],
+        'Paper'     :   ['Rock', 'Paper covers rock!'],
+        'Rock'      :   ['Lizard', 'Rock crushes lizard!'],
+        'Lizard'    :   ['Spock', 'Lizard poisons Spock!'],
+        'Spock'     :   ['Scissors', 'Spock smashes scissors!'],
+        'Scissors'  :   ['Lizard', 'Scissors decapitate lizards!'],
+        'Lizard'    :   ['Paper', 'Lizard eats paper!'],
+        'Paper'     :   ['Spock', 'Paper disproves Spock!'],
+        'Spock'     :   ['Rock', 'Spock vaporizes rock!'],
+        'Rock'      :   ['Scissors', 'Rock crushes scissors!'],
+    }
     /**
      * Display images of moves and delcare winner
      * Potentially create the rules in the runGame function rather than globally
