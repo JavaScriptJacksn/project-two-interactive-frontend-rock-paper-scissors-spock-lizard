@@ -26,13 +26,13 @@
                 <!--Player 1 move box button-->
                 <button onclick="popUp('player1-move-box')">Change Move</button>
                 <span id="player1-move" class="hide-element">
-                <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors">
+                <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors" alt="scissors move">
             </span>
             </div>
 
             <div class="player2-area player-area">
                 <span id="player2-move" class="hide-element">
-                <img src="assets/images/spock.jpg" class="move-image" data-type="spock">
+                <img src="assets/images/spock.jpg" class="move-image" data-type="spock" alt="spock move">
             </span>
                 <!--Player 2 move box button-->
                 <button onclick='popUp("player2-move-box")'>Change Move</button>
@@ -60,23 +60,23 @@
         <div class="popup-header"><h1>Select Move</h1><button class="close-button" onclick="popupClose('player1-move-box');">X</button></div>
         <div class="move-container" id="moves-container">
         <figure>
-            <img src="assets/images/rock.png" class="move-image" data-type="rock">
+            <img src="assets/images/rock.png" class="move-image" data-type="rock" alt="rock move">
             <figcaption>Rock</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/paper.png" class="move-image" data-type="paper">
+            <img src="assets/images/paper.png" class="move-image" data-type="paper" alt="paper move">
             <figcaption>Paper</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors">
+            <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors" alt="scissors move">
             <figcaption>Scissors</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/spock.jpg" class="move-image" data-type="spock">
+            <img src="assets/images/spock.jpg" class="move-image" data-type="spock" alt="spock move">
             <figcaption>Spock</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/lizard.png" class="move-image" data-type="lizard">
+            <img src="assets/images/lizard.png" class="move-image" data-type="lizard" alt="lizard move">
             <figcaption>Lizard</figcaption>
         </figure>
     </div>
@@ -116,7 +116,7 @@
         <div class="popup-header"><h1>Rules</h1><button class="close-button" onclick="popupClose('rules')">X</button></div>
         <p>The rules of this game is simple, each move you can chose defeats two other moves. 
             If the move you pick defeats the opponent's, you win! ...and of course, vice versa.
-            List of rules:
+            List of rules:</p>
             <ul>
                 <li>Scissors cuts paper.</li>
                 <li>Paper covers rock.
@@ -129,9 +129,8 @@
                 <li> Spock vaporizes rock.</li>
                 <li> Rock crushes scissors.</li>
             </ul>
-        </p>
         <section class="pvp-rules">
-        <p>Player vs player game mode:</p>
+        <h3>Player vs player game mode:</h3>
         <p>This game works a little on the trust of the users, so, if you are playing Player versus Player, in the name of sportsmanship,
              make sure to look away from the screen when the other player is chosing their move, thats cheating!</p>
             </section>

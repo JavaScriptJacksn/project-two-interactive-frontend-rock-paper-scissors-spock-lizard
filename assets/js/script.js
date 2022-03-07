@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function (){
     let moveImages = document.getElementsByTagName("figure");
     
     for (let image of moveImages){
-        image.addEventListener("click", changeMove)
-        image.addEventListener("click", alertPlayerChoice)
+        image.addEventListener("click", changeMove);
+        image.addEventListener("click", alertPlayerChoice);
     }
     });
 
@@ -31,10 +31,9 @@ function popupClose(modal){
 /*Change move function*/
 
 function changeMove(){
-    console.log("changeMove called")
+    console.log("changeMove called");
     let parentId = this.parentNode.parentNode.id;
-    let currentPlayer
-    let currentMove
+    let currentMove;
     /**
      * If this is still not optimised when I hand in the project,
     * I apoligse for the hard to follow function
@@ -43,17 +42,17 @@ function changeMove(){
     * Then swaps it for the outer HTML of the image just selected
     * This allows for the image to be read from the DOM again
     */
-    let newMoveHtml = this.children[0].outerHTML
-    console.log(newMoveHtml)
-    let currentMoveId = parentId.slice(0, 12)
-    console.log(currentMoveId)
-    currentMove = document.getElementById(currentMoveId)
-    console.log(currentMove.innerHTML)
-    currentMove.innerHTML = newMoveHtml
+    let newMoveHtml = this.children[0].outerHTML;
+    console.log(newMoveHtml);
+    let currentMoveId = parentId.slice(0, 12);
+    console.log(currentMoveId);
+    currentMove = document.getElementById(currentMoveId);
+    console.log(currentMove.innerHTML);
+    currentMove.innerHTML = newMoveHtml;
 }
 
 function alertPlayerChoice (){
-    let moveName = this.children[1].textContent
+    let moveName = this.children[1].textContent;
     console.log(moveName);
     alert(`You have chosen ${moveName}`);
 }
@@ -61,16 +60,16 @@ function alertPlayerChoice (){
 function changeGameMode(choice){
     if (choice === "pvp"){
         document.getElementById("game-mode").textContent = "pvp";
-        popUp("rules")
+        popUp("rules");
     } else if (choice === "pvc"){
         document.getElementById("game-mode").textContent = "pvc";
-        popUp("rules")
+        popUp("rules");
     } else {
         throw alert ("Please select a game mode");
     }
     /*This function also resets the scores to 0, as users will expect to play with a clean slate against a new oponent*/
-    document.getElementById("player1-score").textContent = "0"
-    document.getElementById("player2-score").textContent = "0"
+    document.getElementById("player1-score").textContent = "0";
+    document.getElementById("player2-score").textContent = "0";
 }
 
 /**
@@ -84,7 +83,7 @@ function runGame(){
     let gameMode = document.getElementById("game-mode").textContent;
     if (gameMode === ""){
         alert ("Please select a game mode");
-        return
+        return;
     } else {
         console.log(`${gameMode} game running`);
     }
@@ -104,7 +103,7 @@ function runGame(){
 }
 
 function newGame(){
-    console.log("new game starting")
+    console.log("new game starting");
     document.getElementById("player1-move").classList.add("hide-element");
     document.getElementById("player2-move").classList.add("hide-element");
 }
@@ -119,11 +118,11 @@ function newGame(){
 function computerMove(){
     console.log("generating computer move");
     let currentMove = document.getElementById("player2-move").children[0];
-    let newMoveHtml = document.getElementById("moves-container").children
+    let newMoveHtml = document.getElementById("moves-container").children;
     let moveNum = Math.floor(Math.random()*5);
-    console.log(moveNum)
+    console.log(moveNum);
     currentMove.outerHTML = newMoveHtml[moveNum].children[0].outerHTML;
-    console.log(`Computer selects move number ${moveNum} which is ${currentMove}`)
+    console.log(`Computer selects move number ${moveNum} which is ${currentMove}`);
 
 }
 
@@ -134,7 +133,7 @@ function computerMove(){
      * */
 
 function checkResult(){
-    console.log("checking result")
+    console.log("checking result");
     let answers = [
         ['scissors',    'paper',    'Scissors cuts paper!'],
         ['paper',       'rock',     'Paper covers rock!'],
@@ -152,29 +151,29 @@ function checkResult(){
     let p2Move = document.getElementById("player2-move").children[0].getAttribute("data-type");
     console.log(p1Move);
     console.log(p2Move);
-    let victoryMessage
-    let winner
+    let victoryMessage;
+    let winner;
     for (let i = 0; i < answers.length; i++) {
         console.log(answers[i]);
         if ((answers[i][0] === p1Move) && (answers[i][1] === p2Move)){
-            winner = "player1"
-            victoryMessage = answers[i][2]
+            winner = "player1";
+            victoryMessage = answers[i][2];
             break;
         } else if ((answers[i][0] === p2Move) && (answers[i][1] === p1Move)){
-            winner = "player2"
-            victoryMessage = answers[i][2]
+            winner = "player2";
+            victoryMessage = answers[i][2];
             break;
         } else {
             continue;
         }
     }
 
-    let secondaryMessage = `${winner} wins`
+    let secondaryMessage = `${winner} wins`;
 
     if (winner === undefined){
         victoryMessage = "It's a draw!";
         secondaryMessage ="No winners!";
-    };
+    }
     console.log(secondaryMessage);
     console.log(victoryMessage);
 
@@ -192,16 +191,16 @@ function checkResult(){
 /*Increments the score for either player depending on victor, and also reseting the game*/
 
 function incrementScore(winner){
-    console.log("incremented score")
+    console.log("incremented score");
     let player1Score = parseInt(document.getElementById("player1-score").textContent);
     let player2Score = parseInt(document.getElementById("player2-score").textContent);
     if (winner === "player1"){
-        player1Score++
+        player1Score++;
         console.log(`player1 score is ${player1Score}`);
-        document.getElementById("player1-score").textContent = player1Score
+        document.getElementById("player1-score").textContent = player1Score;
     }else if (winner === "player2"){
-        player2Score++
+        player2Score++;
         console.log(`player2 score is ${player2Score}`);
-        document.getElementById("player2-score").textContent = player2Score
+        document.getElementById("player2-score").textContent = player2Score;
     }
 }
