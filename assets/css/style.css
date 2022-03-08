@@ -276,7 +276,7 @@ figcaption {
 
 #player1-move,
 #player2-move {
-    position: absolute;
+    position: fixed;
     top: 46.75%;
 }
 
@@ -287,3 +287,92 @@ figcaption {
 #player2-move {
     right: 40vw;
 }
+
+/* @media  screen and (max-width:1800px) {
+
+    #player1-name {
+        margin-bottom: 5vh;
+    }
+
+    #player2-name {
+        margin-top: 5vh;
+    }
+
+    .player-area {
+        flex-wrap: wrap;
+        display: inline;
+        width: 30%;
+        text-align: center;
+        margin: 10%;
+        margin-top: 5%;
+    }
+
+    #player1-move {
+        left: 35vw;
+    }
+    
+    #player2-move {
+        right: 35vw;
+    }
+}
+
+@media  screen and (max-width:1400px) {
+
+    #player1-move {
+        left: 30vw;
+    }
+    
+    #player2-move {
+        right: 30vw;
+    }
+
+    #player1-name,
+    #player2-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media  screen and (max-width:1080px) {
+
+    .move-image {
+        width: 75px;
+    }
+
+    #player1-name,
+    #player2-name {
+        font-size: 1rem;
+    }
+
+    p,
+    button,
+    .popup,
+    .container > p {
+        font-size: 0.8rem;
+    }
+
+    .player-area {
+        margin: 10% 0;
+        width: 50%;
+    }
+
+    .game-area {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #player1-move {
+        left: 20vw;
+        top: 60vh;
+    }
+    
+    #player2-move {
+        right: 20vw;
+        top: 60vh;
+    }
+
+    .player2-area {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+} */
