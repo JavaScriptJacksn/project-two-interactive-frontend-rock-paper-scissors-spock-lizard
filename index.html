@@ -13,7 +13,7 @@
         <h1 id="page-header">Spock's Revenge</h1>
         <h2>( A Rock, Paper, Scissors, Spock, Lizard Game! )</h2>
     </header>
-
+    <video src="/assets/videos/USS-enterprise-background-video.mp4" muted loop autoplay class="background-video"></video>
     <!--Outer container for game-area and rules-area-->
     <div class="container">
         <p>Game mode selected: <span id="game-mode"></span></p>
@@ -24,7 +24,7 @@
             <div class="player1-area player-area">
                 <h3 id="player1-name">Player 1 : <span id="player1-score">0</span></h3>
                 <!--Player 1 move box button-->
-                <button onclick="popUp('player1-move-box')">Change Move</button>
+                <button onclick="popUp('player1-move-box')" id="player1-move-button">Change Move</button>
                 <span id="player1-move" class="hide-element">
                 <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors" alt="scissors move">
             </span>
@@ -35,7 +35,7 @@
                 <img src="assets/images/spock.jpg" class="move-image" data-type="spock" alt="spock move">
             </span>
                 <!--Player 2 move box button-->
-                <button onclick='popUp("player2-move-box")'>Change Move</button>
+                <button onclick='popUp("player2-move-box")' id="player2-move-button">Change Move</button>
                 <h3 id="player2-name"><span id="player2-score">0</span> : Player 2</h3>
             </div>
 

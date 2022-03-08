@@ -17,14 +17,15 @@ body {
     padding: 0;
     margin-top: 25px;
     font-family: Orbitron, sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
     height: 100vh;
+    color: white;
 }
 
 h1, h2{
     text-align: center;
-    color: #3a3a3a;
+    color: white;
     font-family: Orbitron, sans-serif;
     line-height: 2em;
 }
@@ -38,8 +39,33 @@ header, .rules-area {
 }
 
 header{
-    border-bottom: 2px solid #3a3a3a;
+    border-bottom: 2px solid white;
     margin-bottom: 5px;
+    background-color: rgba(58, 58, 58, 0.7);
+    margin-top: 0;
+    padding-top: 0;
+    top: 0;
+}
+
+#page-header {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/*Background video styling*/
+
+.background-video {
+    object-fit: cover;    
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: #3a3a3a;
+    margin: 0;
+    padding: 0;
+
 }
 
 /*Container styling*/
@@ -53,7 +79,7 @@ header{
     height: 80vh;
     position: relative;
     overflow: hidden;
-    background: #FFFFFF url("../images/vs-image.jpg") no-repeat center center;
+    background: url("../images/VS-image.png") no-repeat center center;
 }
 
 /*Run game button and game mode text styling*/
@@ -72,7 +98,12 @@ header{
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 5;
-    color: #3a3a3a;
+    background-color: rgba(58, 58, 58, 0.7);
+    border: 2px solid white;
+    border-radius: 15px;
+    width: fit-content;
+    padding: 15px;
+    text-align: center;
 }
 
 #game-mode {
@@ -113,9 +144,19 @@ header{
 }
 
 #player1-name, #player2-name {
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 600;
     letter-spacing: 2px;
+}
+
+#player1-move-button{
+    border-color: red;
+    color: red;
+}
+
+#player2-move-button {
+    border-color: #0077CA;
+    color: #0077CA;
 }
 
 /*Rules area styling*/
@@ -123,26 +164,24 @@ header{
 .rules-area {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    border-top: 2px solid #3a3a3a;
-    border-bottom: 2px solid #3a3a3a;
     bottom: 0;
     position: fixed;
-}
-
-#rules-button {
-    margin: 50px;
+    margin-bottom: 5vh;
 }
 
 button {
     width: fit-content;
-    border: 2px solid #3a3a3a;
+    border: 2px solid white;
     font-size: 1.2rem;
     font-family: Orbitron, sans-serif;
-    color: #3a3a3a;
+    color: white;
     border-radius: 15px;
     padding: 20px;
+    background: none;
+    font-weight: 600;
+    background-color: rgba(58, 58, 58, 0.7);
 }
 
 /*Move icon styling*/
@@ -160,8 +199,8 @@ button {
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     width: 25%;
-    background-color: white;
-    border: 2px solid #3a3a3a;
+    background-color: rgba(58, 58, 58, 0.7);
+    border: 2px solid white;
     border-radius: 15px;
     padding: 10px 15px;
     z-index: 100;
@@ -186,7 +225,7 @@ button {
 .overlay {
     position: fixed;
     opacity: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     left: 0;
     bottom: 0;
