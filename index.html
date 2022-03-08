@@ -19,21 +19,19 @@
         <p>Game mode selected: <span id="game-mode"></span></p>
         <!--Game area-->
         <div class="game-area">
-            <div class="score-area">
-            </div>
             <div class="player1-area player-area">
                 <h3 id="player1-name">Player 1 : <span id="player1-score">0</span></h3>
                 <!--Player 1 move box button-->
                 <button onclick="popUp('player1-move-box')" id="player1-move-button">Change Move</button>
-                <span id="player1-move" class="hide-element">
+                <div id="player1-move" class="">
                 <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors" alt="scissors move">
-            </span>
+                </div>
             </div>
 
             <div class="player2-area player-area">
-                <span id="player2-move" class="hide-element">
+                <div id="player2-move" class="">
                 <img src="assets/images/spock.jpg" class="move-image" data-type="spock" alt="spock move">
-            </span>
+                </div>
                 <!--Player 2 move box button-->
                 <button onclick='popUp("player2-move-box")' id="player2-move-button">Change Move</button>
                 <h3 id="player2-name"><span id="player2-score">0</span> : Player 2</h3>

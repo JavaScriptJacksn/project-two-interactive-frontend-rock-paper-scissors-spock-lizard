@@ -271,3 +271,19 @@ figcaption {
 .hide-element {
     transform: scale(0);
 }
+
+/*Player move divs to be fixed position*/
+
+#player1-move,
+#player2-move {
+    position: absolute;
+    top: 46.75%;
+}
+
+#player1-move {
+    left: 40vw;
+}
+
+#player2-move {
+    right: 40vw;
+}
