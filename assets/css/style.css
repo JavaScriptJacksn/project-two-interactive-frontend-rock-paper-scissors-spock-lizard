@@ -8,11 +8,6 @@
     box-sizing: border-box;
 }
 
-html {
-    overflow-y: hidden;
-    height: 100%;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -87,16 +82,8 @@ header{
 
 /*Run game button and game mode text styling*/
 
-#run-game-button {
-    position: fixed;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 5;
-}
-
 .container > p {
-    position: fixed;
+    position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -170,7 +157,7 @@ header{
     justify-content: space-evenly;
     align-items: center;
     bottom: 0;
-    position: fixed;
+    position: absolute;
     margin-bottom: 5vh;
 }
 
@@ -470,5 +457,16 @@ figcaption {
 
     header h2 {
         font-size: 0.5rem;
+    }
+
+    .rules-area button {
+        margin: 5px;
+        width: fit-content;
+        font-size: 0.5em;
+    }
+
+    .player-area {
+        height: fit-content;
+        min-height: 50%;
     }
 }

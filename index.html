@@ -8,20 +8,28 @@
     <title>Spock's Revenge</title>
 </head>
 <body>
+
     <!--Header-->
+
     <header>
         <h1 id="page-header">Spock's Revenge</h1>
         <h2>( A Rock, Paper, Scissors, Spock, Lizard Game! )</h2>
     </header>
     <video src="/assets/videos/USS-enterprise-background-video.mp4" muted loop autoplay class="background-video"></video>
+
     <!--Outer container for game-area and rules-area-->
+
     <div class="container">
         <p>Game mode selected: <span id="game-mode"></span></p>
+
         <!--Game area-->
+
         <div class="game-area">
             <div class="player1-area player-area">
                 <h3 id="player1-name">Player 1 : <span id="player1-score">0</span></h3>
+
                 <!--Player 1 move box button-->
+
                 <button onclick="popUp('player1-move-box')" id="player1-move-button">Change Move</button>
                 <div id="player1-move" class="hide-element">
                 <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors" alt="scissors move">
@@ -32,21 +40,24 @@
                 <div id="player2-move" class="hide-element">
                 <img src="assets/images/spock.jpg" class="move-image" data-type="spock" alt="spock move">
                 </div>
+
                 <!--Player 2 move box button-->
+
                 <button onclick='popUp("player2-move-box")' id="player2-move-button">Change Move</button>
                 <h3 id="player2-name"><span id="player2-score">0</span> : Player 2</h3>
             </div>
 
         </div>
 
-        <button id="run-game-button" onclick="runGame()">PLAY</button>
-
         <!--Rules area-->
+
         <div class="rules-area">
 
             <button onclick="changeGameMode('pvp')">Player VS Player</button>
 
             <button id="rules-button" onclick='popUp("rules")'>Rules</button>
+
+            <button id="run-game-button" onclick="runGame()">Play</button>
     
             <button onclick="changeGameMode('pvc')">Player VS Computer</button>
         </div>
