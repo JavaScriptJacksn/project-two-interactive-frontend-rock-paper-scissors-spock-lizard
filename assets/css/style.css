@@ -46,6 +46,8 @@ header{
     margin-top: 0;
     padding-top: 0;
     top: 0;
+    height: fit-content;
+    padding: 2vh;
 }
 
 #page-header {
@@ -468,10 +470,5 @@ figcaption {
 
     header h2 {
         font-size: 0.5rem;
-    }
-
-    header {
-        height: fit-content;
-        padding: 2vh;
     }
 }
