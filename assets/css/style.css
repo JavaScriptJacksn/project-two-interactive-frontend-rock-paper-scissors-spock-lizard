@@ -10,6 +10,7 @@
 
 html {
     overflow-y: hidden;
+    height: 100%;
 }
 
 body {
@@ -198,7 +199,8 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    width: 25%;
+    width: fit-content;
+    max-width: 90%;
     background-color: rgba(58, 58, 58, 0.7);
     border: 2px solid white;
     border-radius: 15px;
@@ -288,35 +290,35 @@ figcaption {
     right: 40vw;
 }
 
-/* @media  screen and (max-width:1800px) {
+/*For screen sizes 1800 pixels wide and below*/
 
-    #player1-name {
-        margin-bottom: 5vh;
-    }
+@media  screen and (max-width:1800px) {
 
+    #player1-name,
     #player2-name {
-        margin-top: 5vh;
+        font-size: 2rem;
+        text-align: center;
+        margin: 50px;
+        padding: 0;
     }
 
     .player-area {
         flex-wrap: wrap;
-        display: inline;
-        width: 30%;
+        display: flex;
+        width: 40%;
         text-align: center;
-        margin: 10%;
-        margin-top: 5%;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
     }
 
-    #player1-move {
-        left: 35vw;
+    .player1-area {
+        flex-direction: column;
     }
-    
-    #player2-move {
-        right: 35vw;
-    }
-}
 
-@media  screen and (max-width:1400px) {
+    .player2-area {
+        flex-direction: column-reverse;
+    }
 
     #player1-move {
         left: 30vw;
@@ -326,16 +328,67 @@ figcaption {
         right: 30vw;
     }
 
-    #player1-name,
-    #player2-name {
-        font-size: 1.5rem;
+    #player1-move,
+    #player2-move {
+        top: 52vh;
     }
 }
 
-@media  screen and (max-width:1080px) {
+/*For screen sizes 1250 pixels wide and below*/
+
+@media screen and (max-width:1250px) {
+    
+    button,
+    .container > p {
+        font-size: 1rem;
+    }
+
+    #player1-name,
+    #player2-name {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 50px 0;
+        padding: 0;
+    }
 
     .move-image {
         width: 75px;
+    }
+
+    .popup {
+        width: fit-content;
+        max-width: 80%;
+    }
+
+    .move-image {
+        margin: 10px;
+        padding: 0;
+    }
+
+    .move-box figure {
+        margin: 0;
+        padding: 0;
+        width: fit-content;
+    }
+
+    #player1-move,
+    #player2-move {
+        top: 56vh;
+    }
+}
+
+/*For screen sizes 900 pixels wide and below*/
+
+@media screen and (max-width:900px) {
+
+    .game-area {
+        background-size: 25%;
+    }
+
+    button,
+    .container > p {
+        font-size: 0.5rem;
+        padding: 10px;
     }
 
     #player1-name,
@@ -343,36 +396,82 @@ figcaption {
         font-size: 1rem;
     }
 
-    p,
-    button,
-    .popup,
-    .container > p {
-        font-size: 0.8rem;
+    .move-image {
+        width: 50px;
+    }
+
+    #player1-move,
+    #player2-move {
+        top: 56vh;
     }
 
     .player-area {
-        margin: 10% 0;
         width: 50%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .popup p,
+    .popup li,
+    .popup figure figcaption {
+        font-size: 0.5rem;
+    }
+
+    .popup h1,
+    .popup h2,
+    .pvp-rules h3 {
+        font-size: 1rem;
+    }
+}
+
+/*For screen sizes 550 pixels wide and below*/
+
+@media screen and (max-width:550px) {
+
+    .move-image {
+        width: 35px;
+    }
+
+    .popup .move-image {
+        margin: 5px;
     }
 
     .game-area {
-        width: 80%;
-        margin: 0 auto;
+        background-size: 20%;
+    }
+
+    #rules {
+        width: 90%;
+    }
+
+    #player1-name,
+    #player2-name {
+        font-size: 0.8rem;
+    }
+
+    #player1-move,
+    #player2-move {
+        top: 59vh;
     }
 
     #player1-move {
-        left: 20vw;
-        top: 60vh;
-    }
-    
-    #player2-move {
-        right: 20vw;
-        top: 60vh;
+        left: 35vw;
     }
 
-    .player2-area {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
+    #player2-move {
+        right: 35vw;
     }
-} */
+
+    header h1 {
+        font-size: 1rem;
+    }
+
+    header h2 {
+        font-size: 0.5rem;
+    }
+
+    header {
+        height: fit-content;
+        padding: 2vh;
+    }
+}
