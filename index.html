@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Rock Paper Spock Lizard Browser Game">
+    <meta name="keywords" content="Rock, Paper, Scissors, Spock, Lizard, Game, Fun">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Spock's Revenge</title>
@@ -20,7 +22,7 @@
     <!--Outer container for game-area and rules-area-->
 
     <div class="container">
-        <p>Game mode selected: <span id="game-mode"></span></p>
+        <p>Game mode selected : <span id="game-mode"></span></p>
 
         <!--Game area-->
 
@@ -53,13 +55,13 @@
 
         <div class="rules-area">
 
-            <button onclick="changeGameMode('pvp')">Player VS Player</button>
+            <button onclick="changeGameMode('pvp')" aria-label="player versus player">Player VS Player</button>
 
-            <button id="rules-button" onclick='popUp("rules")'>Rules</button>
+            <button id="rules-button" onclick='popUp("rules")' aria-label="rules">Rules</button>
 
-            <button id="run-game-button" onclick="runGame()">Play</button>
+            <button id="run-game-button" onclick="runGame()" aria-label="play game">Play</button>
     
-            <button onclick="changeGameMode('pvc')">Player VS Computer</button>
+            <button onclick="changeGameMode('pvc')" aria-label="player versus computer">Player VS Computer</button>
         </div>
     </div>
 
@@ -97,23 +99,23 @@
         <div class="popup-header"><h1>Select Move</h1><button class="close-button" onclick="popupClose('player2-move-box')">X</button></div>
         <div class="move-container">
         <figure>
-            <img src="assets/images/rock.png" class="move-image" data-type="rock">
+            <img src="assets/images/rock.png" class="move-image" data-type="rock" alt="rock move">
             <figcaption>Rock</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/paper.png" class="move-image" data-type="paper">
+            <img src="assets/images/paper.png" class="move-image" data-type="paper" alt="paper move">
             <figcaption>Paper</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors">
+            <img src="assets/images/scissors.jpg" class="move-image" data-type="scissors" alt="scissors move">
             <figcaption>Scissors</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/spock.jpg" class="move-image" data-type="spock">
+            <img src="assets/images/spock.jpg" class="move-image" data-type="spock" alt="spock move">
             <figcaption>Spock</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/lizard.png" class="move-image" data-type="lizard">
+            <img src="assets/images/lizard.png" class="move-image" data-type="lizard" alt="lizard move">
             <figcaption>Lizard</figcaption>
         </figure>
     </div>
