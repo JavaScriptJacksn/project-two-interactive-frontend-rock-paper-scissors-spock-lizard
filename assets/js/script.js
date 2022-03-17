@@ -97,8 +97,9 @@ function runGame(){
     document.getElementById("player2-move").classList.remove("hide-element");
 
     /*Allows time for players to react themselves to the moves shown before the message is displayed*/
-    let snd = new Audio("assets/audio/sfx-victory3.mp3");
-    snd.play();
+    let victoryAudio = new Audio("assets/audio/sfx-victory3.mp3");
+    victoryAudio.play();
+    console.log("victory audio playing");
     setTimeout(popUp, 5000, "end-game");
     setTimeout(newGame, 6000);
 }

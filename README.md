@@ -83,6 +83,8 @@ In addition to this concept to work with, Spock’s Revenge gains the additional
 - It was discovered that if the devices were multitasking or used fairly old hardware, the background video would take an unsatisfactory time to load.
     - To solve this, a poster was added to the image post-deployment to ensure a backup screenshot of the video was displayed if the video took to long to load.
     - Whilst not a bug fix and more of an optimisation, after further testing this was observed to make the greatest improvement to older hardware such as an iPhone 6s.
+- The audio file was not being located properly in GitHub pages by the JavaScript.
+    - This was an issue with the file path being absolute, which worked in the live server preview but not GitHub pages.
 ### Unsolved Bugs
 - At the top of the header, on some device viewports, the background color of a mid-opacity gray does not extend to the top of the page and leaves a bar of the background video.
 ## Deployment
