@@ -48,6 +48,7 @@ header{
 #page-header {
     margin-top: 0;
     padding-top: 0;
+    font-size: 3em;
 }
 
 /*Background video styling*/
@@ -179,6 +180,10 @@ button:hover {
     transition: 200ms ease-in-out;
 }
 
+.close-button:hover {
+    box-shadow: none;
+}
+
 /*Move icon styling*/
 
 .move-image {
@@ -305,6 +310,10 @@ figcaption {
         padding: 0;
     }
 
+    #page-header {
+        font-size: 2rem;
+    }
+
     .player-area {
         flex-wrap: wrap;
         display: flex;
@@ -354,6 +363,10 @@ figcaption {
         padding: 0;
     }
 
+    #page-header {
+        font-size: 1.5rem;
+    }
+
     .move-image {
         width: 75px;
     }
@@ -397,6 +410,10 @@ figcaption {
     #player1-name,
     #player2-name {
         font-size: 1rem;
+    }
+
+    #page-header {
+        font-size: 1.5rem;
     }
 
     .move-image {
