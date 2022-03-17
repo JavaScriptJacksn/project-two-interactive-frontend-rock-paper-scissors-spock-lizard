@@ -87,6 +87,9 @@ In addition to this concept to work with, Spock’s Revenge gains the additional
     - This was an issue with the file path being absolute, which worked in the live server preview but not GitHub pages.
 ### Unsolved Bugs
 - At the top of the header, on some device viewports, the background color of a mid-opacity gray does not extend to the top of the page and leaves a bar of the background video.
+- The victory audio on first playthrough may be desynced if it takes too long to load.
+    - This is solved in some cases as I moved the code further to the start of the runGame function to allow for a buffer of time for the audio to load.
+    - If this occours, on the next playthrough it will run as expected and synced.
 ## Deployment
 - The project was deployed to GitHub Pages using the following steps…
     1. Log in to GitHub and locate the Project Two Interactive Frontend Repository.
