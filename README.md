@@ -98,6 +98,7 @@ In addition to this concept to work with, Spock’s Revenge gains the additional
 ## Credits
 ### Content
 - The Orbitron font was imported from [Google Fonts](https://fonts.google.com/)
+- The Javascript for the victory audio was taken and edited from this [Stack Overflow post.](https://stackoverflow.com/questions/9419263/how-to-play-audio) 
 ### Media
 - All move icons were from [Free Icons Library](https://icon-library.com/icon/spock-icon-3.html)
 - The background video was trimmed down from the YouTube channel [ZEFilms Productions](https://www.youtube.com/watch?v=nBGWz9Oiwg0)
