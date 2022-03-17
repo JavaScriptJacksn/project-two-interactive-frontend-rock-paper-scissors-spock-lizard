@@ -1,4 +1,4 @@
-/*Inital function to set up event listeners*/
+//Inital function to set up event listeners
 document.addEventListener("DOMContentLoaded", function (){
     let moveImages = document.getElementsByTagName("figure");
     
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function (){
     }
     });
 
-/*Functions for opening and closing the rules modal box*/
+//Functions for opening and closing the rules modal box
 
 function popUp (modal){
     console.log("popUp called");
@@ -28,7 +28,7 @@ function popupClose(modal){
     overlay.classList.remove("overlay-active");
 }
 
-/*Change move function*/
+//Change move function
 
 function changeMove(){
     console.log("changeMove called");
@@ -67,7 +67,7 @@ function changeGameMode(choice){
     } else {
         throw alert ("Please select a game mode");
     }
-    /*This function also resets the scores to 0, as users will expect to play with a clean slate against a new oponent*/
+    //This function also resets the scores to 0, as users will expect to play with a clean slate against a new oponent
     document.getElementById("player1-score").textContent = "0";
     document.getElementById("player2-score").textContent = "0";
 }
@@ -87,6 +87,13 @@ function runGame(){
     } else {
         console.log(`${gameMode} game running`);
     }
+    /**
+    * Audio is loaded here to allow mest match of timings
+    * However on the intial round, users may experience audio delay if not loaded
+    */
+
+    let victoryAudio = new Audio("assets/audio/sfx-victory3.mp3");  
+    
     if (gameMode === "pvc"){
         computerMove();
         incrementScore(checkResult());
@@ -96,8 +103,7 @@ function runGame(){
     document.getElementById("player1-move").classList.remove("hide-element");
     document.getElementById("player2-move").classList.remove("hide-element");
 
-    /*Allows time for players to react themselves to the moves shown before the message is displayed*/
-    let victoryAudio = new Audio("assets/audio/sfx-victory3.mp3");
+    //Allows time for players to react themselves to the moves shown before the message is displayed
     victoryAudio.play();
     console.log("victory audio playing");
     setTimeout(popUp, 5000, "end-game");
