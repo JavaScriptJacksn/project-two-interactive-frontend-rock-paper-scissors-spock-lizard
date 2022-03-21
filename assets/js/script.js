@@ -29,10 +29,16 @@ function popupClose(modal){
      * A short delay is used to make the alerts more user-friendly.
      */
     if (modal === "end-game" || modal === "rules"){
-        setTimeout(alert("PLAYER 1, CHOSE YOUR MOVE!"), 1500);
-    } else if (modal === "player1-move-box" && document.getElementById("game-mode").textContent === "pvp"){
-        setTimeout(alert("PLAYER 2, CHOSE YOUR MOVE!"), 1500);
+        setTimeout(promptPlayerInput, 1000, "player 1");
+    } else if (modal === "player1-move-box" && (document.getElementById("game-mode").textContent) === "pvp"){
+        setTimeout(promptPlayerInput, 1000, "player 2");
     }
+}
+
+// This function simply exists to allow the prompts for user input top be time-delayed
+function promptPlayerInput(player) {
+    player = player.toUpperCase();
+        alert(`${player}, CHOSE YOUR MOVE, OR CHANGE GAME MODE AND RESET!`);
 }
 
 //Change move function
@@ -108,7 +114,7 @@ function runGame(){
     // Allows time for players to react themselves to the moves shown before the message is displayed
     victoryAudio.play();
     setTimeout(popUp, 5000, "end-game");
-    setTimeout(newGame, 6000);
+    setTimeout(newGame, 5000);
 }
 
 /**
