@@ -22,6 +22,17 @@ function popupClose(modal){
     let overlay = document.getElementById("overlay");
     box.classList.remove("popup-active");
     overlay.classList.remove("overlay-active");
+    /**
+     * This checks to see if it is the end game modal being closed, to then alert the user to change move again.
+     * Furthermore, this if statement also prompts players 1 & 2 for change of move if the game mode is PVP.
+     * The player 2 alert prompt will only be called at the closing of the player 1 move box.
+     * A short delay is used to make the alerts more user-friendly.
+     */
+    if (modal === "end-game" || modal === "rules"){
+        setTimeout(alert("PLAYER 1, CHOSE YOUR MOVE!"), 1500);
+    } else if (modal === "player1-move-box" && document.getElementById("game-mode").textContent === "pvp"){
+        setTimeout(alert("PLAYER 2, CHOSE YOUR MOVE!"), 1500);
+    }
 }
 
 //Change move function
@@ -36,7 +47,7 @@ function changeMove(){
     * Then gets the element with that ID and its outer HTML
     * Then swaps it for the outer HTML of the image just selected
     * This allows for the image to be read from the DOM again
-    * This is in an effort to not create global variables.
+    * This is to not create global variables.
     */
     let newMoveHtml = this.children[0].outerHTML;
     let currentMoveId = parentId.slice(0, 12);
