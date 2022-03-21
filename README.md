@@ -63,6 +63,7 @@ In addition to this concept to work with, Spock’s Revenge gains the additional
 - On all devices listed above, the site is fully responsive and accessible.
 - Firefox and Chrome dev tools were also used to simulate the realistic viewports of a varied selection of devices, to which all are currently responsive and accessible.
 - I confirmed that the colors and fonts chosen are easy to read and accessible by running the site through Chrome’s lighthouse in the developer tools.
+- Three user candidates were asked to use and test the site before and post-deployment, with their user experience stories really being of use in bug fixing as explained in the 'Bugs' section.
 
 <img src="assets/images/README/lighthouse-report.jpg" alt="Lighthouse report" width="40%">
 
@@ -90,6 +91,12 @@ In addition to this concept to work with, Spock’s Revenge gains the additional
 - The victory audio on first playthrough may be desynced if it takes too long to load.
     - This is solved in some cases as I moved the code further to the start of the runGame function to allow for a buffer of time for the audio to load.
     - If this occours, on the next playthrough it will run as expected and synced.
+- Whilst not a bug in the technical sense, it is possible for users to be able to run the game without chaning moves first.
+    - This missing feature aroused after building the game around the best practises of having no global variables.
+    - There are fixes to this I would like to implement, however it regretably would take a re-work of major features and could potentially result in global variables being created.
+    - In an attempt to remedy this, users are prompted to change moves at the stages of the game where it is required (at the start of each round) and only both players are prompted if the game mode is player versus player.
+    - Whilst this will ensure almost all users have a good user experience and time playing the game, some users who ignore the prompts intentionally or unintentionally, will play a round with moves they didn't chose, or moves saved to the DOM from the previous round.
+    - Through post-deployment testing, it was observed that no users encountered this issue, and when it was explained to them and they were asked how much it effected their expereince, the candidates testing the game all agreed it was a minor issue that they would not have discovered if it was not pointed out to them. 
 ## Deployment
 - The project was deployed to GitHub Pages using the following steps…
     1. Log in to GitHub and locate the Project Two Interactive Frontend Repository.
